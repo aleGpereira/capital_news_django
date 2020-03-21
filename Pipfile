@@ -1,0 +1,27 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+flake8 = "*"
+flake8-isort = "*"
+mock = "*"
+pep8-naming = "*"
+pytest = "*"
+pytest-cov = "*"
+pytest-mock = "*"
+autopep8 = "*"
+pytest-env = "*"
+
+[requires]
+python_version = "3.8"
+
+[packages]
+django = "*"
+django-heroku = "*"
+psycopg2 = "*"
+django-crispy-forms = "*"
+django-storages = "*"
+pillow = "*"
+gunicorn = "*"
