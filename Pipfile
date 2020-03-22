@@ -18,6 +18,7 @@ pytest-env = "*"
 python_version = "3.8"
 
 [packages]
+boto3 = "*"
 django = "*"
 django-heroku = "*"
 psycopg2 = "*"
