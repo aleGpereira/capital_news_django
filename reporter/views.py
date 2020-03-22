@@ -1,5 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
+from django.core.mail import mail_admins
 from django.shortcuts import redirect, render
 
 from .forms import ProfileUpdateForm, ReporterRegisterForm, ReporterUpdateForm
@@ -11,6 +12,11 @@ def register(request):
         if form.is_valid():
             form.save()
             username = form.cleaned_data.get('username')
+            mail_admins(
+                'New account created',
+                f'An account for user {username} has been created.',
+                fail_silently=False,
+            )
             messages.success(
                 request, f'Your account has been created! You are now able to log in')
             return redirect('login')
